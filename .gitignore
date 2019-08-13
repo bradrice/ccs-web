@@ -117,3 +117,9 @@ dmypy.json
 
 log/
 logs/
+
+# python cache
+*.pyc
+
+# macos
+.DS_Store
