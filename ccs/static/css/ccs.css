@@ -13,14 +13,17 @@
     padding: 1rem;
 }
 
-.ccs-banner {
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: row;
+.banner {
     background-color: #ec008c;
     color: #fff;
     border-radius: 0;
     padding: 2rem 1rem;
+}
+
+.ccs-banner {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
     align-content: center;
 }
 

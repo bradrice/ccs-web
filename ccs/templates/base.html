@@ -30,18 +30,22 @@
         {% wagtailuserbar %}
         <div class="wrap">
             <header>
-                    <div class="jumbotron banner ccs-banner">
-                            <div class="logo-wrapper">
-                                    <img src="{% static 'images/ccs-logo.png' %}" alt="ccs-logo" />
-                            </div>
-                            <div class=banner-title>
-                              {% block banner-title %}
-                                <h3 class="display-5 banner-title banner">{{ self.title }}</h3>
-                                <div class="lead">{{ self.subtitle }}</div>
-                              {% endblock %}
-                            </div>
+                    <div class="jumbotron banner">
+                      <div class="container  ccs-banner">
+                          <div class="logo-wrapper">
+                              <img src="{% static 'images/ccs-logo.png' %}" alt="ccs-logo" />
+                      </div>
+                      <div class=banner-title>
+                        {% block banner-title %}
+                          <h3 class="display-5 banner-title banner">{{ self.title }}</h3>
+                          <div class="lead">{{ self.subtitle }}</div>
+                        {% endblock %}
+                      </div>
+                      </div>
+                            
                         </div>
                         <nav class="navbar navbar-expand-lg">
+                          <div class="container">
                             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                               <span class="navbar-toggler-icon"></span>
@@ -90,6 +94,7 @@
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                               </form> -->
                             </div>
+                          </div>
                           </nav>
             </header>
         
