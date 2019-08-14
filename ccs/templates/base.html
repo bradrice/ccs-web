@@ -54,16 +54,16 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                               <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                  <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/about">About Us</a>
+                                    <a class="nav-link {% if 'about' in request.path %}active{% endif %}" href="/about">About Us</a>
                                   </li>
                                 <li class="nav-item">
-                                  <a class="nav-link" href="/contact">Contact Us</a>
+                                  <a class="nav-link{% if 'contact' in request.path %}active{% endif %}" href="/contact">Contact Us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/stakeholder-report">Stakeholder Report</a>
+                                    <a class="nav-link{% if 'stakeholder-report' in request.path %}active{% endif %}" href="/stakeholder-report">Stakeholder Report</a>
                                   </li>
                                 <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,6 +100,7 @@
         
         {% block content %}{% endblock %}
         <div class="footer">
+            <p>{{request.path}}</p>
                 Contact Us: <a href="mailto:info@medinadiversityproject.org">info@medinadiversityproject.org</a>
             </div>
         </div>

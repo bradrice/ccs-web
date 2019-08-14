@@ -52,6 +52,12 @@
     color: #fff;
 }
 
+.navbar a.active {
+    background-color: #a6ce39;
+    color: #92278f;
+    border-radius: 4px;
+}
+
 .dropdown-menu {
     background-color: #92278f;
 }
