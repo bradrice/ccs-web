@@ -24,6 +24,10 @@
     align-content: center;
 }
 
+.ccs-banner h3 {
+    color: #fff;
+}
+
 .banner-title {
     align-self: center;
 }
@@ -49,7 +53,7 @@
 }
 
 .footer {
-    background-color: #92278f;
+    background-color: #a6ce39;
     padding: 1rem;
     color: #fff;
 }
@@ -59,7 +63,7 @@
 }
 
 h1, h2 {
-    color: #a6ce39;
+    color: #92278f;
 }
 
 h3, h4 {
