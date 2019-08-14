@@ -12,12 +12,12 @@ class HomePage(Page):
     template = "home/home_page.html"
     max_count = 1
 
-    banner_title = models.CharField(max_length=100, blank=False, null=True)
+    subtitle = models.CharField(max_length=100, blank=False, null=True)
     left_col = RichTextField()
     right_col = RichTextField()
 
     content_panels = Page.content_panels + [
-        FieldPanel("banner_title"),
+        FieldPanel("subtitle"),
         FieldPanel("left_col"),
         FieldPanel("right_col")
     ]
