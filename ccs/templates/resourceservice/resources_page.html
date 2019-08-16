@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}   
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block banner-title %}
+                          <h3 class="display-5 banner-title banner">Resource</h3>
+                          <div class="lead">{{ self.subtitle }}</div>
+                        {% endblock %}
+
+{% block content %}
+<div class="content">
+
+        <h3>{{self.resource_name}}</h3>
+        <p><a href="{{self.website}}" target="_new">{{self.website}}</a></p>
+        <p>{{self.phone_number}}</p>
+        <p>{{self.info | richtext}}</p>
+        {% for iter in self.resource_category.all %}
+            <span class="category">{{ iter.category }}</span>
+        {% endfor %}
+
+</div>
+
+
+    
+{% endblock %}

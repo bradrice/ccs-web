@@ -66,20 +66,20 @@
                                     <a class="nav-link {% if 'stakeholder-report' in request.path %}active{% endif %}" href="/stakeholder-report">Stakeholder Report</a>
                                   </li>
                                 <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <a class="nav-link dropdown-toggle {% if 'resource' in request.path %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Resources
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Medical/Dental</a>
-                                    <a class="dropdown-item" href="#">Food</a>
-                                    <a class="dropdown-item" href="#">Jobs</a>
-                                    <a class="dropdown-item" href="#">Transportation</a>
-                                    <a class="dropdown-item" href="#">Housing</a>
-                                    <a class="dropdown-item" href="#">Personal Care/Toiletries</a>
-                                    <a class="dropdown-item" href="#">Legal</a>
-                                    <a class="dropdown-item" href="#">Counseling</a>
-                                    <a class="dropdown-item" href="#">Senior Services</a>
-                                    <a class="dropdown-item" href="#">Safety Services</a>
+                                    <a class="dropdown-item" href="/resource/medical-dental">Medical/Dental</a>
+                                    <a class="dropdown-item" href="/resource/food">Food</a>
+                                    <a class="dropdown-item" href="/resource/jobs">Jobs</a>
+                                    <a class="dropdown-item" href="/resource/transportation">Transportation</a>
+                                    <a class="dropdown-item" href="/resource/housing">Housing</a>
+                                    <a class="dropdown-item" href="/resource/personal-care">Personal Care/Toiletries</a>
+                                    <a class="dropdown-item" href="/resource/legal">Legal</a>
+                                    <a class="dropdown-item" href="/resource/counseling">Counseling</a>
+                                    <a class="dropdown-item" href="/resource/senior-services">Senior Services</a>
+                                    <a class="dropdown-item" href="/resource/safety-services">Safety Services</a>
                 
                                     <!-- <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Something else here</a>
