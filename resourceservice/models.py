@@ -21,7 +21,7 @@ class ResourceListingPage(RoutablePageMixin, Page):
 
     template = "resourceservice/resource_listing_page.html"
     subpage_types = ['ResourcePage']
-    max_count = 2
+    max_count = 1
 
     custom_title = models.CharField(
         max_length=100,
