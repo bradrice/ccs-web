@@ -19,7 +19,7 @@ class HomePage(Page):
 
     template = "home/home_page.html"
     max_count = 1
-    subpage_types = ['flex.FlexPage']
+    subpage_types = ['flex.FlexPage', 'resourceservice.ResourceListingPage']
 
     subtitle = models.CharField(max_length=100, blank=False, null=True)
     left_col = RichTextField()
