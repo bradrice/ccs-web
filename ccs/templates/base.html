@@ -19,6 +19,7 @@
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
         {# Global stylesheets #}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link href="{% static 'css/font-awesome/all.css' %}" rel="stylesheet"> <!--load all styles -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/ccs.css' %}">
 
         {% block extra_css %}
@@ -33,7 +34,7 @@
                     <div class="jumbotron banner">
                       <div class="container  ccs-banner">
                           <div class="logo-wrapper">
-                              <img src="{% static 'images/ccs-logo.png' %}" alt="ccs-logo" />
+                              <img src="{% static 'images/ccs-logo.png' %}" alt="ccs-logo" class="img-fluid" />
                       </div>
                       <div class=banner-title>
                         {% block banner-title %}
@@ -48,7 +49,7 @@
                           <div class="container">
                             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"></span>
+                              <span class="navbar-toggler-icon fas fa-bars"></span>
                             </button>
                           
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -70,16 +71,16 @@
                                     Resources
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/resource/medical-dental">Medical/Dental</a>
-                                    <a class="dropdown-item" href="/resource/food">Food</a>
-                                    <a class="dropdown-item" href="/resource/jobs">Jobs</a>
-                                    <a class="dropdown-item" href="/resource/transportation">Transportation</a>
-                                    <a class="dropdown-item" href="/resource/housing">Housing</a>
-                                    <a class="dropdown-item" href="/resource/personal-care">Personal Care/Toiletries</a>
-                                    <a class="dropdown-item" href="/resource/legal">Legal</a>
-                                    <a class="dropdown-item" href="/resource/counseling">Counseling</a>
-                                    <a class="dropdown-item" href="/resource/senior-services">Senior Services</a>
-                                    <a class="dropdown-item" href="/resource/safety-services">Safety Services</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/medical-dental">Medical/Dental</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/food">Food</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/jobs">Jobs</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/transportation">Transportation</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/housing">Housing</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/personal-care">Personal Care/Toiletries</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/legal">Legal</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/counseling">Counseling</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/senior-services">Senior Services</a>
+                                    <a class="dropdown-item" href="/resources/resourcebycategory/safety-services">Safety Services</a>
                 
                                     <!-- <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Something else here</a>
@@ -100,7 +101,6 @@
         
         {% block content %}{% endblock %}
         <div class="footer">
-            <p>{{request.path}}</p>
                 Contact Us: <a href="mailto:info@medinadiversityproject.org">info@medinadiversityproject.org</a>
             </div>
         </div>

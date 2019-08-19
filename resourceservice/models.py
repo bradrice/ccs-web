@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import render
 from wagtail.snippets.models import register_snippet
 import uuid
 
@@ -12,9 +13,10 @@ from wagtail.admin.edit_handlers import (
     MultiFieldPanel,
     InlinePanel
 )
-from wagtail.snippets.edit_handlers import SnippetChooserPanel  
+from wagtail.snippets.edit_handlers import SnippetChooserPanel
+from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 
-class ResourceListingPage(Page):
+class ResourceListingPage(RoutablePageMixin, Page):
     """Listing page lists all the Resource Pages."""
 
     template = "resourceservice/resource_listing_page.html"
@@ -32,11 +34,37 @@ class ResourceListingPage(Page):
         FieldPanel("custom_title"),
     ]
 
+    def __str__(self):
+        """String representation of this class"""
+        return self.custom_title
+
     def get_context(self, request, *args, **kwargs):
         """Adding custom stuff to our context."""
         context = super().get_context(request, *args, **kwargs)
-        # context["posts"] = ResourceDetailPage.objects.live().public()
+        context["resitems"] = ResourcePage.objects.live().public()
         return context
+
+    @route(r'^resourcebycategory/(?P<cat_slug>[-\w]*)/$', name="category_view")
+    def list_category_page(self, request, cat_slug, *args, **kwargs):
+        print(cat_slug)
+        context = self.get_context(request)
+        try:
+            category = ResourceCategory.objects.get(category_name=cat_slug)
+        except Exception:
+            category = None;
+
+        if category is None:
+            pass
+
+        cats = ResourceCategory.objects.all()
+        print(cats)
+        print(category)
+        ri = CategorySelectingOrderable.objects.filter(category__in=[category])
+        print(ri)
+        context['category'] = cat_slug
+        context['resitems'] = CategorySelectingOrderable.objects.filter(category__in=[category])
+        return render(request, "resourceservice/list_category_page.html", context)
+
 
 # Create your models here.
 class ResourcePage(Page):
@@ -47,7 +75,7 @@ class ResourcePage(Page):
 
     subtitle = models.CharField(max_length=100, blank=False, null=True)
     resource_name = models.CharField(max_length=128, blank=False, null=True)
-    phone_number = models.CharField(max_length=12, blank=True, null=True)
+    phone_number = models.CharField(max_length=24, blank=True, null=True)
     website = models.URLField(blank=True, null=True)
     info = RichTextField(blank=True, null=True)
     # resource_category = models.ForeignKey("resourceservices.ResourceCategory", on_delete=models.CASCADE)
@@ -83,6 +111,9 @@ class ResourcePage(Page):
             ]
         )
     ]
+
+    def __str__(self):
+        return self.resource_name
 
 
 class CategorySelectingOrderable(Orderable):
@@ -129,6 +160,7 @@ class ResourceCategory(models.Model):
         verbose_name_plural = "Categories"
 
 register_snippet(ResourceCategory)
+
 
 
 

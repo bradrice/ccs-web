@@ -4,21 +4,26 @@
 
 {% block banner-title %}
                           <h3 class="display-5 banner-title banner">Resources</h3>
-                          <div class="lead">All</div>
+                          <div class="lead">By category</div>
                         {% endblock %}
 
 {% block content %}
 <div class="content">
-  {% if resitems|length > 0 %}
+
+        <!-- <p>List by category here {{category}}</p> -->
+        <!-- <div>{{resitems}}</div> -->
+        {% if resitems|length > 0 %}
         {% for item in resitems %}
-          <h3><a href="{{item.url}}">{{ item.resource_name}}</a></h3>
-          {% for cat in item.resource_category.all %}
+        <h3>{{ item.page.resource_name }}</h3>
+          <p><a href="{{item.page.url}}">{{ item.page.resource_name}}</a></p>
+          {% for cat in item.page.resource_category.all %}
           <a href="/resources/resourcebycategory/{{cat.category}}/"><span class="category">{{cat.category}}</span></a>
           {% endfor %}
         {% endfor %}
-  {% else %}
+        {% else %}
   <p>No resources listed for this category</p>
   {% endif %}
+
 </div>
 
 

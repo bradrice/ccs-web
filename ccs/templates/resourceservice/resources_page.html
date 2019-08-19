@@ -11,11 +11,11 @@
 <div class="content">
 
         <h3>{{self.resource_name}}</h3>
-        <p><a href="{{self.website}}" target="_new">{{self.website}}</a></p>
+        <p><a href="{{self.website}}" target="_new">Website</a></p>
         <p>{{self.phone_number}}</p>
         <p>{{self.info | richtext}}</p>
         {% for iter in self.resource_category.all %}
-            <span class="category">{{ iter.category }}</span>
+            <a href="/resources/resourcebycategory/{{iter.category}}/"><span class="category">{{ iter.category }}</span></a>
         {% endfor %}
 
 </div>

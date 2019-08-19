@@ -37,6 +37,7 @@
 }
 
 .logo-wrapper {
+    display: inline-table;
     padding: 12px;
     background-color: #fff;
     border-radius: 12px;
@@ -56,6 +57,17 @@
     background-color: #a6ce39;
     color: #92278f;
     border-radius: 4px;
+    padding: .5em;
+}
+
+.navbar-toggler {
+    padding: 0;
+}
+
+.navbar-toggler-icon {
+    font-size: 1.5em;
+    height: 1.25em;
+    color: #fff;
 }
 
 .dropdown-menu {
@@ -87,5 +99,8 @@ h3, h4 {
 .category {
     color: #92278f;
     margin-right: .5rem;
+    background-color: #a6ce39;
+    padding: 4px 8px;
+    border-radius: 2px;
 }
 
