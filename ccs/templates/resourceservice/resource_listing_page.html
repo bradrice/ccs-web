@@ -9,16 +9,19 @@
 
 {% block content %}
 <div class="content">
-  {% if resitems|length > 0 %}
-        {% for item in resitems %}
-          <h3><a href="{{item.url}}">{{ item.resource_name}}</a></h3>
-          {% for cat in item.resource_category.all %}
-          <a href="/resources/resourcebycategory/{{cat.category}}/"><span class="category">{{cat.category}}</span></a>
+  <div class="container">
+
+    {% if resitems|length > 0 %}
+          {% for item in resitems %}
+            <h3><a href="{{item.url}}">{{ item.resource_name}}</a></h3>
+            {% for cat in item.resource_category.all %}
+            <a href="/resources/resourcebycategory/{{cat.category}}/"><span class="category">{{cat.category}}</span></a>
+            {% endfor %}
           {% endfor %}
-        {% endfor %}
-  {% else %}
-  <p>No resources listed for this category</p>
-  {% endif %}
+    {% else %}
+    <p>No resources listed for this category</p>
+    {% endif %}
+  </div>
 </div>
 
 

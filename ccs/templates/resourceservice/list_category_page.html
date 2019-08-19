@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="content">
-
+    <div class="container">
         <!-- <p>List by category here {{category}}</p> -->
         <!-- <div>{{resitems}}</div> -->
         {% if resitems|length > 0 %}
@@ -21,9 +21,9 @@
           {% endfor %}
         {% endfor %}
         {% else %}
-  <p>No resources listed for this category</p>
-  {% endif %}
-
+    <p>No resources listed for this category</p>
+    {% endif %}
+    </div>
 </div>
 
 
