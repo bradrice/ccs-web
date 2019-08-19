@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="content">
-
+    <div class="container">
         <h3>{{self.resource_name}}</h3>
         <p><a href="{{self.website}}" target="_new">Website</a></p>
         <p>{{self.phone_number}}</p>
@@ -17,7 +17,7 @@
         {% for iter in self.resource_category.all %}
             <a href="/resources/resourcebycategory/{{iter.category}}/"><span class="category">{{ iter.category }}</span></a>
         {% endfor %}
-
+    </div>
 </div>
 
 

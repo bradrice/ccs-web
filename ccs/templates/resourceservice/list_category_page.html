@@ -14,8 +14,8 @@
         <!-- <div>{{resitems}}</div> -->
         {% if resitems|length > 0 %}
         {% for item in resitems %}
-        <h3>{{ item.page.resource_name }}</h3>
-          <p><a href="{{item.page.url}}">{{ item.page.resource_name}}</a></p>
+        <a href="{{item.page.url}}"><h3>{{ item.page.resource_name }}</h3></a>
+          <p><a href="{{item.page.url}}">View Resource</a></p>
           {% for cat in item.page.resource_category.all %}
           <a href="/resources/resourcebycategory/{{cat.category}}/"><span class="category">{{cat.category}}</span></a>
           {% endfor %}
